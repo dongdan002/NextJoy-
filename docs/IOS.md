@@ -1,3 +1,23 @@
+<!-- MarkdownTOC -->
+
+- [iOS 对接文档](#ios-%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A3)
+    - [1.概述](#1%E6%A6%82%E8%BF%B0)
+    - [2.注意事项](#2%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
+    - [3.接入配置](#3%E6%8E%A5%E5%85%A5%E9%85%8D%E7%BD%AE)
+    - [4.依赖库的添加](#4%E4%BE%9D%E8%B5%96%E5%BA%93%E7%9A%84%E6%B7%BB%E5%8A%A0)
+    - [5.相关环境配置](#5%E7%9B%B8%E5%85%B3%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE)
+    - [6.设置应用白名单](#6%E8%AE%BE%E7%BD%AE%E5%BA%94%E7%94%A8%E7%99%BD%E5%90%8D%E5%8D%95)
+        - [由于SDK不支持Bitcode 所以需要关闭bitcode](#%E7%94%B1%E4%BA%8Esdk%E4%B8%8D%E6%94%AF%E6%8C%81bitcode-%E6%89%80%E4%BB%A5%E9%9C%80%E8%A6%81%E5%85%B3%E9%97%ADbitcode)
+        - [配置链接器Other Linker Flags 加入标识](#%E9%85%8D%E7%BD%AE%E9%93%BE%E6%8E%A5%E5%99%A8other-linker-flags-%E5%8A%A0%E5%85%A5%E6%A0%87%E8%AF%86)
+    - [URL Schemes 配置](#url-schemes-%E9%85%8D%E7%BD%AE)
+    - [7.SDK启动配置（applicationDelegate）](#7sdk%E5%90%AF%E5%8A%A8%E9%85%8D%E7%BD%AE%EF%BC%88applicationdelegate%EF%BC%89)
+    - [8.接口调用](#8%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8)
+    - [9.sdk响应回调](#9sdk%E5%93%8D%E5%BA%94%E5%9B%9E%E8%B0%83)
+    - [10.如需模拟器版本请联系我们,其他详见Demo](#10%E5%A6%82%E9%9C%80%E6%A8%A1%E6%8B%9F%E5%99%A8%E7%89%88%E6%9C%AC%E8%AF%B7%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC%E5%85%B6%E4%BB%96%E8%AF%A6%E8%A7%81demo)
+    - [11.遇到问题](#11%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98)
+
+<!-- /MarkdownTOC -->
+
 ## iOS 对接文档
 
 -------------------
