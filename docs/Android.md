@@ -1,3 +1,30 @@
+<!-- MarkdownTOC -->
+
+- [安卓](#%E5%AE%89%E5%8D%93)
+    - [注意事项](#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
+    - [Android SDK 接入步骤](#android-sdk-%E6%8E%A5%E5%85%A5%E6%AD%A5%E9%AA%A4)
+    - [引入SDK配置](#%E5%BC%95%E5%85%A5sdk%E9%85%8D%E7%BD%AE)
+        - [AndroidManifest.xml配置](#androidmanifestxml%E9%85%8D%E7%BD%AE)
+            - [权限配置](#%E6%9D%83%E9%99%90%E9%85%8D%E7%BD%AE)
+            - [组件配置](#%E7%BB%84%E4%BB%B6%E9%85%8D%E7%BD%AE)
+            - [微信回调页面WXEntryActivity配置](#%E5%BE%AE%E4%BF%A1%E5%9B%9E%E8%B0%83%E9%A1%B5%E9%9D%A2wxentryactivity%E9%85%8D%E7%BD%AE)
+    - [生命周期接入](#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%8E%A5%E5%85%A5)
+    - [业务功能接入](#%E4%B8%9A%E5%8A%A1%E5%8A%9F%E8%83%BD%E6%8E%A5%E5%85%A5)
+        - [初始化](#%E5%88%9D%E5%A7%8B%E5%8C%96)
+        - [登录](#%E7%99%BB%E5%BD%95)
+        - [注销](#%E6%B3%A8%E9%94%80)
+        - [支付](#%E6%94%AF%E4%BB%98)
+        - [支付流程](#%E6%94%AF%E4%BB%98%E6%B5%81%E7%A8%8B)
+        - [退出游戏](#%E9%80%80%E5%87%BA%E6%B8%B8%E6%88%8F)
+        - [分享功能](#%E5%88%86%E4%BA%AB%E5%8A%9F%E8%83%BD)
+    - [全局回调监听对象](#%E5%85%A8%E5%B1%80%E5%9B%9E%E8%B0%83%E7%9B%91%E5%90%AC%E5%AF%B9%E8%B1%A1)
+    - [获取用户信息 NextJoyUserModel](#%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF-nextjoyusermodel)
+    - [获取配置参数信息](#%E8%8E%B7%E5%8F%96%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E4%BF%A1%E6%81%AF)
+    - [桌面精灵](#%E6%A1%8C%E9%9D%A2%E7%B2%BE%E7%81%B5)
+    - [遇到问题](#%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98)
+
+<!-- /MarkdownTOC -->
+
 ## 安卓
 ### 注意事项
 *    appId ,appKey由明日世界平台申请获得
