@@ -1,34 +1,3 @@
-<!-- MarkdownTOC -->
-
-- [服务器](#%E6%9C%8D%E5%8A%A1%E5%99%A8)
-    - [校验登陆合法性](#%E6%A0%A1%E9%AA%8C%E7%99%BB%E9%99%86%E5%90%88%E6%B3%95%E6%80%A7)
-        - [描述](#%E6%8F%8F%E8%BF%B0)
-        - [流程](#%E6%B5%81%E7%A8%8B)
-        - [接口](#%E6%8E%A5%E5%8F%A3)
-        - [参数](#%E5%8F%82%E6%95%B0)
-        - [返回值](#%E8%BF%94%E5%9B%9E%E5%80%BC)
-    - [创建订单接口](#%E5%88%9B%E5%BB%BA%E8%AE%A2%E5%8D%95%E6%8E%A5%E5%8F%A3)
-        - [描述](#%E6%8F%8F%E8%BF%B0-1)
-        - [流程](#%E6%B5%81%E7%A8%8B-1)
-        - [接口](#%E6%8E%A5%E5%8F%A3-1)
-        - [参数](#%E5%8F%82%E6%95%B0-1)
-        - [返回值](#%E8%BF%94%E5%9B%9E%E5%80%BC-1)
-    - [支付结果通知接口（商品发放通知）](#%E6%94%AF%E4%BB%98%E7%BB%93%E6%9E%9C%E9%80%9A%E7%9F%A5%E6%8E%A5%E5%8F%A3%EF%BC%88%E5%95%86%E5%93%81%E5%8F%91%E6%94%BE%E9%80%9A%E7%9F%A5%EF%BC%89)
-        - [描述](#%E6%8F%8F%E8%BF%B0-2)
-        - [接口地址](#%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80)
-        - [通知方式](#%E9%80%9A%E7%9F%A5%E6%96%B9%E5%BC%8F)
-        - [请求参数](#%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0)
-        - [返回值](#%E8%BF%94%E5%9B%9E%E5%80%BC-2)
-    - [接口签名](#%E6%8E%A5%E5%8F%A3%E7%AD%BE%E5%90%8D)
-        - [签名方法说明](#%E7%AD%BE%E5%90%8D%E6%96%B9%E6%B3%95%E8%AF%B4%E6%98%8E)
-        - [签名生成步骤](#%E7%AD%BE%E5%90%8D%E7%94%9F%E6%88%90%E6%AD%A5%E9%AA%A4)
-        - [签名示例](#%E7%AD%BE%E5%90%8D%E7%A4%BA%E4%BE%8B)
-        - [SDK错误码](#sdk%E9%94%99%E8%AF%AF%E7%A0%81)
-
-<!-- /MarkdownTOC -->
-
-## 服务器
-
 ### 校验登陆合法性
 
 #### 描述
@@ -38,7 +7,7 @@
 
 #### 流程
 
-![avatar](NextJoyGameSdk_files/img/login.png)
+![avatar](img/login.png)
 
 #### 接口
 http://sdktest.game.nextjoy.com/cp_auth/actoken
@@ -74,7 +43,7 @@ http://sdktest.game.nextjoy.com/cp_auth/actoken
 }
 ```
 
-### 创建订单接口
+### 创建订单
 
 #### 描述
 由游戏服务器向NextJoySdk申请订单
@@ -82,7 +51,7 @@ http://sdktest.game.nextjoy.com/cp_auth/actoken
 
 #### 流程
 
-![avatar](NextJoyGameSdk_files/img/pay_order.png)
+![avatar](img/pay_order.png)
 
 #### 接口
 http://sdktest.game.nextjoy.com/cp_pay/create_order

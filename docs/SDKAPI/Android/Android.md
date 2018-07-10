@@ -1,31 +1,4 @@
-<!-- MarkdownTOC -->
 
-- [安卓](#%E5%AE%89%E5%8D%93)
-    - [注意事项](#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
-    - [Android SDK 接入步骤](#android-sdk-%E6%8E%A5%E5%85%A5%E6%AD%A5%E9%AA%A4)
-    - [引入SDK配置](#%E5%BC%95%E5%85%A5sdk%E9%85%8D%E7%BD%AE)
-        - [AndroidManifest.xml配置](#androidmanifestxml%E9%85%8D%E7%BD%AE)
-            - [权限配置](#%E6%9D%83%E9%99%90%E9%85%8D%E7%BD%AE)
-            - [组件配置](#%E7%BB%84%E4%BB%B6%E9%85%8D%E7%BD%AE)
-            - [微信回调页面WXEntryActivity配置](#%E5%BE%AE%E4%BF%A1%E5%9B%9E%E8%B0%83%E9%A1%B5%E9%9D%A2wxentryactivity%E9%85%8D%E7%BD%AE)
-    - [生命周期接入](#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%8E%A5%E5%85%A5)
-    - [业务功能接入](#%E4%B8%9A%E5%8A%A1%E5%8A%9F%E8%83%BD%E6%8E%A5%E5%85%A5)
-        - [初始化](#%E5%88%9D%E5%A7%8B%E5%8C%96)
-        - [登录](#%E7%99%BB%E5%BD%95)
-        - [注销](#%E6%B3%A8%E9%94%80)
-        - [支付](#%E6%94%AF%E4%BB%98)
-        - [支付流程](#%E6%94%AF%E4%BB%98%E6%B5%81%E7%A8%8B)
-        - [退出游戏](#%E9%80%80%E5%87%BA%E6%B8%B8%E6%88%8F)
-        - [分享功能](#%E5%88%86%E4%BA%AB%E5%8A%9F%E8%83%BD)
-    - [全局回调监听对象](#%E5%85%A8%E5%B1%80%E5%9B%9E%E8%B0%83%E7%9B%91%E5%90%AC%E5%AF%B9%E8%B1%A1)
-    - [获取用户信息 NextJoyUserModel](#%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF-nextjoyusermodel)
-    - [获取配置参数信息](#%E8%8E%B7%E5%8F%96%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0%E4%BF%A1%E6%81%AF)
-    - [桌面精灵](#%E6%A1%8C%E9%9D%A2%E7%B2%BE%E7%81%B5)
-    - [遇到问题](#%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98)
-
-<!-- /MarkdownTOC -->
-
-## 安卓
 ### 注意事项
 *    appId ,appKey由明日世界平台申请获得
 *   
@@ -38,7 +11,12 @@
 *    apk的编译请使用android21
 *    游戏进入流程，母包必须保证进入游戏的顺序是 健康忠告（包含版号等信息）-----登录界面（必须包含一个登录按钮）-------进入游戏
 *    必须保证游戏主activity在AndroidManifest.xml中配置android:configChanges="orientation|keyboardHidden|screenSize"，其中值至少包含"orientation|keyboardHidden|screenSize" 以避免横竖屏切换游戏activity被重启
+
+
+
 ### Android SDK 接入步骤
+
+
 1. 导入NextJoy_Kernel.aar和NextJoySDK-TOOL.aar两个文件到libs目录
 2. 在build.gradle文件中添加如下引用
 ```
@@ -52,7 +30,11 @@ compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 ```
 3. 引入sdk配置
 
+
+
 ### 引入SDK配置
+
+
 
 #### AndroidManifest.xml配置
 
@@ -136,7 +118,12 @@ super.onDestroy();
 ```
 注：此处不需要修改，直接copy就行
 
+
+
 ### 生命周期接入
+
+
+
 ```
 @Override
 protected void onStart() {
@@ -187,9 +174,15 @@ super.onNewIntent(intent);
 NextJoyGameSDK.getInstance().onNewIntent(intent);
 } 
 ```
+
+
+
 ### 业务功能接入
 
+
+
 #### 初始化
+
 NextJoyGameSDK.getInstance().init(Activity mActivity, NextJoyGameConfig config , INextJoySDKCallBack sdkListener)
 
 | 参数名 | 说明 | 可否为空 |
@@ -313,6 +306,8 @@ NextJoyGameSDK.getInstance().share(shareInfo);
 3.所分享的图片大小应小于1.5M;否则分享有可能失败。因此需要客户端在保存分享图片的时候对图片做压缩处理。
 
 *   分享参数说明
+
+
 ```
 //分享内容样式
 public enum NJShareInfoType {
@@ -329,47 +324,52 @@ QQZONE,
 
 ```
 
+
+
 ### 全局回调监听对象
+
+
+
 com.nextjoy.sdk.
 INextJoySDKCallBack sdkListener
 
 详细字段说明
 回调接口名
-*    onInitResult 初始化回调
+* onInitResult 初始化回调
 ```
 参数：int responseCode 状态码 NextJoyCode.CODE_INIT_SUCCESS 初始化成功；NextJoyCode.CODE_INIT_FAIL 初始化失败
 String responseMessage 状态描述
 ```
-*    onLoginResult 登录回调
+* onLoginResult 登录回调
 ```
 参数：int responseCode 状态码 NextJoyCode.CODE_LOGIN_SUCCESS 登录成功；NextJoyCode.CODE_LOGIN_FAIL 登录失败
 String responseMessage 状态描述
 String sAuthToken cp方验证token。登录失败时为空字符串
 boolean bSwitchAccount  是否切换账号
 ```
-*    onLogoutResult 注销回调
+* onLogoutResult 注销回调
 ```
 参数：int responseCode 状态码 NextJoyCode.CODE_LOGINOUT
 String responseMessage 状态描述
 ```
-*    onExitResult 退出回调
+* onExitResult 退出回调
 ```
 参数：int responseCode 状态码 NextJoyCode.CODE_EXIT
 String responseMessage 状态描述
 ```
-*    onPayResult 支付回调（注：H5的支付方式没有此回调，此时需要cp服务器接收到sdk服务器支付成功的通知时，自行通知cp客户端）
+* onPayResult 支付回调（注：H5的支付方式没有此回调，此时需要cp服务器接收到sdk服务器支付成功的通知时，自行通知cp客户端）
 ```
 参数：int responseCode 状态码 NextJoyCode.CODE_PAY_SUCCESS 支付成功；NextJoyCode.CODE_PAY_FAIL 支付失败；NextJoyCode.CODE_PAY_WAIT
 支付等待；NextJoyCode.CODE_PAY_CANCEL 支付取消
 String responseMessage 状态描述
 ```
-*    onAntiAddictionResult 身份认证查询接口回调
+* onAntiAddictionResult 身份认证查询接口回调
 ```
 参数：int responseCode 状态码 NextJoyCode.CODE_QUERY_ANTIADDICTION_SUCCESS 查询成功； NextJoyCode.CODE_QUERY_ANTIADDICTION_FAIL 查询失败
 String responseMessage 状态描述
 int userCurrentStatus 身份认证状态 NextJoyCode.CODE_ANTIADDICTION_UNKNOWN 未进行身份认证；NextJoyCode.CODE_ANTIADDICTION_JUVENILES 未成年；NextJoyCode.CODE_ANTIADDICTION_ADULT 成年
 ```
-*   onShareResult 分享回调
+* onShareResult 分享回调
 ```
 参数：int shareStatus 状态码 NextJoyCode.CODE_SHARE_SUCCESS 分享成功； NextJoyCode.CODE_SHARE_FAIL 分享失败；NextJoyCode.CODE_SHARE_CANCEL 分享取消
 String responseMessage 状态描述
@@ -377,6 +377,7 @@ String responseMessage 状态描述
 ### 获取用户信息 NextJoyUserModel
 
 LocalUserBuffer.getUserInfo()；
+
 ```
 String account;//账号
 String actoken;//cp游戏验证token
@@ -386,7 +387,13 @@ String token;//登录token
 int safe_level;//账号安全级别
 int fcm;// -1：未进行防沉迷验证  0：未通过防沉迷验证  1：通过防沉迷验证
 ```
+
+
+
 ### 获取配置参数信息
+
+
+
 ```
 NextJoyGameSDK.getInstance().getAppId();//应用id
 NextJoyGameSDK.getInstance().getChildId();//应用小包id
@@ -396,14 +403,22 @@ NextJoyDeviceInfoHelper.getInstance().sDeviceInfo.getDeviceId();//设备唯一�
 NextJoyGameConfig.API_VERSION;//核心库版本号
 NextJoyGameConfig.SDK_VERSION;//sdk插件版本号
 ```
+
+
 ### 桌面精灵
+
+
 ```
 DefaultSDKHandler.getInstance().showFloatMenu();//显示桌面精灵在默认位置或者上次显示的位置
 NextJoyGameSDK.getInstance().showFloatMenu(int posX,int posY);//在指定位置显示桌面精灵  posX：指定位置所在屏幕的X轴坐标；posY：指定位置所在屏幕的Y轴坐标 posX >=0  posY >=0
 DefaultSDKHandler.getInstance().hideFloatMenu();//隐藏桌面精灵
 
 ```
+
+
 注：如需显示桌面精灵，只需在登录回调成功时调用显示桌面精灵的api即可。
+
+
 
 ### 遇到问题
 * 调起sdk登录界面，手机锁屏再开屏时，游戏界面黑屏

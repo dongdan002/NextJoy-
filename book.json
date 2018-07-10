@@ -1,0 +1,29 @@
+{
+	"description" : "Gitbook 教程",
+	"direction" : "ltr",
+	"language" : "zh-hans",
+	"author": "malei",
+	"title" : "gitbook-notes",
+	"plugins": [ 
+		"-lunr",
+    	"-search",
+    	"-livereload",
+    	"-sharing",
+    	"search-plus",
+    	"expandable-chapters" ,
+    	"tbfed-pagefooter",
+    	"back-to-top-button",
+        "theme-comscore",
+    	"theme-api"
+    	],
+	"pluginsConfig": {
+    	"expandable-chapters":{},
+    	"tbfed-pagefooter": {
+      		"copyright": "Copyright &copy; NextJoy2018",
+      		"modify_label": "文件修订时间：",
+      		"modify_format": "YYYY-MM-DD HH:mm:ss"
+    	},
+    	"theme-api": {
+        }
+ 	}
+}
